@@ -5,6 +5,7 @@ binary=/program/Admins.net_ws
 token_file=/config/ws.admins.net/gateway-token
 origin=${ORIGIN_PROTOCOL:-http}
 api_url=${WS3_API_URL:-https://api.admins.net/v1/gateway/}
+gateway_id=${WS3_GATEWAY_ID:-ws-1}
 
 [ -x "$binary" ] || { echo "Missing executable $binary" >&2; exit 64; }
 [ -r "$token_file" ] || { echo "Missing gateway token $token_file" >&2; exit 64; }
@@ -24,4 +25,4 @@ case "$origin" in
 esac
 
 cd /config/ws.admins.net
-exec "$binary" --origin="$origin" --token-file="$token_file" --api-url="$api_url"
+exec "$binary" --origin="$origin" --token-file="$token_file" --api-url="$api_url" --gateway-id="$gateway_id"
