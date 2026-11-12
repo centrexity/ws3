@@ -1,0 +1,11 @@
+.git
+.github
+config
+program
+.env
+*.pem
+*.key
+token.txt
+gateway-token
+Admins.net_ws
+README.md
